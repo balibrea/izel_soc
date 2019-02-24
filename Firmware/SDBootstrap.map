@@ -1,0 +1,274 @@
+
+Se asignan símbolos comunes
+Símbolo común       tamaño            fichero
+
+SDHCtype            0x4               zpu_obj/spi.o
+SPI_R1              0x6               zpu_obj/spi.o
+
+Configuración de la Memoria
+
+Nombre           Origen             Longitud           Atributos
+BOOT             0x40000000         0x00000060         xr
+TRAP             0x40000060         0x00000000         xr
+CODE             0x40000060         0x0000ffff         xr
+EXRAM            0x007ff000         0x00001400         rw
+*default*        0x00000000         0xffffffff
+
+Guión del enlazador y mapa de memoria
+
+LOAD zpu_obj/mincrt0.o
+LOAD zpu_obj/premain.o
+LOAD zpu_obj/small_printf.o
+LOAD zpu_obj/uart.o
+LOAD zpu_obj/spi.o
+LOAD zpu_obj/fat_write.o
+LOAD zpu_obj/fat_table.o
+LOAD zpu_obj/fat_string.o
+LOAD zpu_obj/fat_misc.o
+LOAD zpu_obj/fat_format.o
+LOAD zpu_obj/fat_filelib.o
+LOAD zpu_obj/fat_cache.o
+LOAD zpu_obj/fat_access.o
+LOAD zpu_obj/string.o
+LOAD zpu_obj/boot.o
+                0x00000000                . = 0x0
+
+.fixed_vectors  0x40000000       0x60
+ *(.fixed_vectors)
+ .fixed_vectors
+                0x40000000       0x60 zpu_obj/mincrt0.o
+                0x40000013                _boot
+                0x40000000                _start
+                0x40000020                _zpu_interrupt_vector
+                0x40000018                _inthandler_fptr
+                0x4000000c                _break
+
+.text           0x40000060     0x32c4
+                0x40000060                . = ALIGN (0x4)
+ *(.text)
+ .text          0x40000060       0x80 zpu_obj/mincrt0.o
+                0x40000075                _loadb
+                0x4000008a                _storeh
+                0x40000060                _loadh
+                0x400000b7                _storeb
+ .text          0x400000e0       0x25 zpu_obj/premain.o
+                                 0x2b (tamaño antes de la relajación)
+                0x400000e0                _premain
+ .text          0x40000105      0x19c zpu_obj/small_printf.o
+                                0x1e5 (tamaño antes de la relajación)
+                0x40000163                small_printf
+ .text          0x400002a1      0x189 zpu_obj/uart.o
+                                0x1ce (tamaño antes de la relajación)
+                0x400002a1                putchar
+                0x400002c3                puts
+                0x4000032e                scan
+                0x400003be                get_number
+                0x4000030b                getserial
+ .text          0x4000042a      0x44f zpu_obj/spi.o
+                                0x4ed (tamaño antes de la relajación)
+                0x40000765                sd_write_sector
+                0x4000042a                SPI_PUMP
+                0x4000082a                media_read
+                0x400005b7                is_sdhc
+                0x400006b7                spi_init
+                0x400004ef                spi_spin
+                0x4000076d                sd_read_sector
+                0x40000508                wait_initV2
+                0x4000085c                media_write
+                0x40000574                wait_init
+                0x4000047a                cmd_write
+ .text          0x40000879      0x452 zpu_obj/fat_table.o
+                                0x4de (tamaño antes de la relajación)
+                0x40000879                fatfs_fat_init
+                0x40000a01                fatfs_fat_purge
+                0x40000bf5                fatfs_count_free_clusters
+                0x40000b27                fatfs_set_fs_info_next_free_cluster
+                0x40000a4e                fatfs_find_next_cluster
+ .text          0x40000ccb      0x714 zpu_obj/fat_string.o
+                                0x83d (tamaño antes de la relajación)
+                0x4000101e                fatfs_compare_names
+                0x4000123e                fatfs_get_extension
+                0x40000ccb                fatfs_total_path_levels
+                0x40000e87                fatfs_split_path
+                0x400011d6                fatfs_get_sfn_display_name
+                0x400012d7                fatfs_create_path_string
+                0x40001167                fatfs_string_ends_with_slash
+                0x40000d7b                fatfs_get_substring
+ .text          0x400013df       0xd2 zpu_obj/fat_misc.o
+                                 0xf2 (tamaño antes de la relajación)
+                0x40001488                fatfs_entry_is_file
+                0x4000145f                fatfs_entry_is_dir
+                0x400013f2                fatfs_entry_lfn_text
+                0x400013df                fatfs_lfn_cache_init
+                0x4000141b                fatfs_entry_sfn_only
+ .text          0x400014b1      0xd4a zpu_obj/fat_filelib.o
+                                0xf94 (tamaño antes de la relajación)
+                0x400019a6                fl_init
+                0x40001eb9                fl_fseek
+                0x4000204a                fl_opendir
+                0x400019dc                fl_attach_locks
+                0x4000212e                fl_listdirectory
+                0x40001fdb                fl_ftell
+                0x400020e3                fl_readdir
+                0x40001e00                fl_fgetc
+                0x40001fa0                fl_fgetpos
+                0x40001a5b                fl_shutdown
+                0x40001cc6                fl_fread
+                0x40002042                fl_closedir
+                0x40001c4f                fl_fclose
+                0x40001a96                fl_fopen
+                0x40001c47                fl_fflush
+                0x40001ffa                fl_feof
+                0x400019f4                fl_attach_media
+                0x400021d1                fl_is_dir
+                0x40001e47                fl_fgets
+ .text          0x400021fb       0x18 zpu_obj/fat_cache.o
+                                 0x1b (tamaño antes de la relajación)
+                0x4000220b                fatfs_cache_set_next_cluster
+                0x400021fb                fatfs_cache_init
+                0x40002203                fatfs_cache_get_next_cluster
+ .text          0x40002213      0xa3b zpu_obj/fat_access.o
+                                0xb1a (tamaño antes de la relajación)
+                0x40002213                fatfs_init
+                0x40002787                fatfs_read_sector
+                0x40002a39                fatfs_list_directory_next
+                0x40002694                fatfs_sector_write
+                0x4000267d                fatfs_sector_read
+                0x400028bb                fatfs_get_root_cluster
+                0x40002a1d                fatfs_list_directory_start
+                0x400026ab                fatfs_sector_reader
+                0x400028ce                fatfs_get_file_entry
+                0x4000283f                fatfs_show_details
+                0x40002626                fatfs_lba_of_cluster
+ .text          0x40002c4e      0x497 zpu_obj/string.o
+                                0x53c (tamaño antes de la relajación)
+                0x40002c84                strcpy
+                0x40002f79                memmove
+                0x40002ed9                memcpy
+                0x40002e90                strrchr
+                0x40002d25                strcat
+                0x40003005                memchr
+                0x40002e05                strncmp
+                0x40002cb4                strncpy
+                0x40002fb5                memcmp
+                0x40002d64                strncat
+                0x4000304c                memset
+                0x40002db9                strcmp
+                0x4000307e                next_word
+                0x40002c4e                strlen
+                0x40002e64                strchr
+ .text          0x400030e5      0x23e zpu_obj/boot.o
+                                0x26d (tamaño antes de la relajación)
+                0x40003184                __udivsi3
+                0x40003197                __umodsi3
+                0x400031aa                main
+                0x40003131                __divsi3
+                0x400030e5                __modsi3
+ *(.text.*)
+                0x40003324                . = ALIGN (0x4)
+ *fill*         0x40003323        0x1 00
+ *fill*         0x40003324        0x0 00
+ *fill*         0x40003324        0x0 00
+ *fill*         0x40003324        0x0 00
+ *fill*         0x40003324        0x0 00
+                0x40003324                __ctors_start__ = .
+ *(.ctors)
+ *(.ctors.*)
+                0x40003324                __ctors_end__ = .
+                0x40003324                . = ALIGN (0x4)
+                0x40003324                __dtors_start__ = .
+ *(.dtors)
+ *(.dtors.*)
+                0x40003324                __dtors_end__ = .
+
+.rodata         0x40003324      0x1f8
+ *(.rodata)
+ .rodata        0x40003324       0x10 zpu_obj/mincrt0.o
+ *(.rodata.*)
+ .rodata.str1.4
+                0x40003334        0x4 zpu_obj/uart.o
+ .rodata.str1.4
+                0x40003338       0x60 zpu_obj/spi.o
+ .rodata.str1.4
+                0x40003398       0x50 zpu_obj/fat_filelib.o
+ .rodata.str1.4
+                0x400033e8       0x9c zpu_obj/fat_access.o
+ .rodata.str1.4
+                0x40003484       0x97 zpu_obj/boot.o
+                                 0x98 (tamaño antes de la relajación)
+                0x4000351c                . = ALIGN (0x4)
+ *fill*         0x4000351b        0x1 00
+ *fill*         0x4000351c        0x0 00
+ *fill*         0x4000351c        0x0 00
+ *fill*         0x4000351c        0x0 00
+ *fill*         0x4000351c        0x0 00
+                0x4000351c                _romend = .
+
+.data           0x40000060        0x0
+                0x40000060                _data = .
+ *(.data)
+ *(.data.*)
+                0x40000060                . = ALIGN (0x4)
+
+.bss            0x007ff000      0x970
+                0x007ff000                __bss_start = .
+                0x007ff000                __bss_start__ = .
+ *(.bss)
+ .bss           0x007ff000       0x10 zpu_obj/mincrt0.o
+                0x007ff000                _memreg
+ .bss           0x007ff010       0x90 zpu_obj/small_printf.o
+ .bss           0x007ff0a0      0x8c4 zpu_obj/fat_filelib.o
+ *(.bss.*)
+ *(COMMON)
+ COMMON         0x007ff964        0xa zpu_obj/spi.o
+                                  0x0 (tamaño antes de la relajación)
+                0x007ff964                SDHCtype
+                0x007ff968                SPI_R1
+                0x007ff970                . = ALIGN (0x4)
+ *fill*         0x007ff96e        0x2 00
+ *fill*         0x007ff970        0x0 00
+ *fill*         0x007ff970        0x0 00
+ *fill*         0x007ff970        0x0 00
+ *fill*         0x007ff970        0x0 00
+                0x007ff970                __bss_end__ = .
+
+.debug_loc
+ *(.debug_loc)
+
+.debug_abbrev
+ *(.debug_abbrev)
+
+.debug_str
+ *(.debug_str)
+
+.debug_info
+ *(.debug_info)
+
+.debug_line
+ *(.debug_line)
+
+.debug_frame
+ *(.debug_frame)
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_aranges
+ *(.debug_aranges)
+
+.comment        0x00000000       0xea
+ *(.comment)
+ .comment       0x00000000       0x12 zpu_obj/small_printf.o
+ .comment       0x00000012       0x12 zpu_obj/uart.o
+ .comment       0x00000024       0x12 zpu_obj/spi.o
+ .comment       0x00000036       0x12 zpu_obj/fat_write.o
+ .comment       0x00000048       0x12 zpu_obj/fat_table.o
+ .comment       0x0000005a       0x12 zpu_obj/fat_string.o
+ .comment       0x0000006c       0x12 zpu_obj/fat_misc.o
+ .comment       0x0000007e       0x12 zpu_obj/fat_format.o
+ .comment       0x00000090       0x12 zpu_obj/fat_filelib.o
+ .comment       0x000000a2       0x12 zpu_obj/fat_cache.o
+ .comment       0x000000b4       0x12 zpu_obj/fat_access.o
+ .comment       0x000000c6       0x12 zpu_obj/string.o
+ .comment       0x000000d8       0x12 zpu_obj/boot.o
+OUTPUT(SDBootstrap.elf elf32-zpu)

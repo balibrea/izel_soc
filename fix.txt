@@ -1,0 +1,3 @@
+fix fat_string.h: fatfs_compare_names
+
+fix: boot only 3kB, fixing SDRAM acess

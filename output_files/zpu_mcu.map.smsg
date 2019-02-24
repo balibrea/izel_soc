@@ -1,0 +1,5 @@
+Info (10281): Verilog HDL Declaration information at jtag_uart.v(36): object "txmt" differs only in case from object "TXmt" in the same scope
+Info (10281): Verilog HDL Declaration information at jtag_uart.v(37): object "txfl" differs only in case from object "TXfl" in the same scope
+Info (10281): Verilog HDL Declaration information at jtag_uart.v(38): object "rxmt" differs only in case from object "RXmt" in the same scope
+Info (10281): Verilog HDL Declaration information at jtag_uart.v(40): object "rxfl" differs only in case from object "RXfl" in the same scope
+Warning (10268): Verilog HDL information at TwoWayCache.v(216): always construct contains both blocking and non-blocking assignments
