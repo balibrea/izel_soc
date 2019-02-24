@@ -343,54 +343,6 @@ myuart : entity work.simple_uart
     );
 
 
--- PS2 devices
-
-    --~ mykeyboard : entity work.io_ps2_com
-        --~ generic map (
-            --~ clockFilter => 15,
-            --~ ticksPerUsec => sysclk_frequency/10
-        --~ )
-        --~ port map (
-            --~ clk => clk,
-            --~ reset => not reset, -- active high!
-            --~ ps2_clk_in => ps2k_clk_in,
-            --~ ps2_dat_in => ps2k_dat_in,
-            --~ ps2_clk_out => ps2k_clk_out,
-            --~ ps2_dat_out => ps2k_dat_out,
-
-            --~ inIdle => open, -- Probably don't need this
-            --~ sendTrigger => kbdsendtrigger,
-            --~ sendByte => kbdsendbyte,
-            --~ sendBusy => kbdsendbusy,
-            --~ sendDone => kbdsenddone,
-            --~ recvTrigger => kbdrecv,
-            --~ recvByte => kbdrecvbyte
-        --~ );
-
-
-    --~ mymouse : entity work.io_ps2_com
-        --~ generic map (
-            --~ clockFilter => 15,
-            --~ ticksPerUsec => sysclk_frequency/10
-        --~ )
-        --~ port map (
-            --~ clk => clk,
-            --~ reset => not reset, -- active high!
-            --~ ps2_clk_in => ps2m_clk_in,
-            --~ ps2_dat_in => ps2m_dat_in,
-            --~ ps2_clk_out => ps2m_clk_out,
-            --~ ps2_dat_out => ps2m_dat_out,
-
-            --~ inIdle => open, -- Probably don't need this
-            --~ sendTrigger => mousesendtrigger,
-            --~ sendByte => mousesendbyte,
-            --~ sendBusy => mousesendbusy,
-            --~ sendDone => mousesenddone,
-            --~ recvTrigger => mouserecv,
-            --~ recvByte => mouserecvbyte
-        --~ );
-
-
 -- SPI Timer
 process(clk)
 begin
@@ -619,7 +571,7 @@ int_triggers<=(0=>timer_tick,
         IMPL_CALL => true,
         IMPL_SHIFT => true,
         IMPL_XOR => true,
-        CACHE => TRUE,
+        CACHE => flase,
 --      IMPL_EMULATION => minimal,
         REMAP_STACK => true, -- We need to remap the Boot ROM / Stack RAM so we can access SDRAM
         EXECUTE_RAM => true, -- We might need to execute code from SDRAM, too.
