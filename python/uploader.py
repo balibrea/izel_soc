@@ -29,8 +29,12 @@ port = 2323
 size = 1024
 
 class NetWorker:
-    def __init__(self):
+    def __init__(self, host, port):
         self.is_connected = 0
+        try:
+            self.soc = self.Open(host, port)
+        except:
+            print("Can not connect to especified host")
 
     def Open(self, host, port):
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -46,6 +50,7 @@ class NetWorker:
         value = bin(intValue).split('0b')[1].zfill(size) #Convert from int to binary string
         conn.send(value + '\n') #Newline is required to flush the buffer on the Tcl server
 
+    # TODO
     def ReceiveData(self):
         pass
 
@@ -55,7 +60,7 @@ class Uploader(QWidget):
         super(Uploader, self).__init__(parent)
 
         #Network Manager
-        self.NetMgr = NetWorker()
+        self.NetMgr = NetWorker(host, port)
 
         #Main Layout
         butt_l = QHBoxLayout()
