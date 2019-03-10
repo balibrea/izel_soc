@@ -67,6 +67,8 @@ class Uploader(QWidget):
         self.sendButton = QPushButton(" Send ")
         self.fileInLine = QLineEdit()
         self.successLabel = QLabel()
+        self.progress = QProgressBar()
+        self.progress.setMaximum(100)
 
         #Ad items to layouts
         butt_l.addWidget(self.connectButton)
@@ -75,6 +77,7 @@ class Uploader(QWidget):
         butt_l.addStretch()
 
         butt_l2.addWidget(self.sendButton)
+        butt_l2.addWidget(self.progress)
         butt_l2.addWidget(self.successLabel)
         butt_l2.addStretch()
 
@@ -109,7 +112,8 @@ class Uploader(QWidget):
     # TODO
     def SendFile(self):
         self.successLabel.setStyleSheet("QWidget { background-color: green }")
-        self.successLabel.setText("     Success     ")
+        self.progress.setValue(100)
+        self.successLabel.setText(" Success ")
 
 
 
