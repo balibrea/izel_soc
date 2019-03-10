@@ -31,10 +31,14 @@ size = 1024
 class NetWorker:
     def __init__(self, host, port):
         self.is_connected = 0
+        self.host = host
+        self.port = port
         try:
             self.soc = self.Open(host, port)
+            self.is_connected = 1
         except:
             print("Can not connect to especified host")
+            self.is_connected = 0
 
     def Open(self, host, port):
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -88,6 +92,7 @@ class Uploader(QWidget):
 
         main_l.addLayout(butt_l)
         main_l.addLayout(butt_l2)
+        main_l.addStretch()
 
         # Events
         self.connectButton.clicked.connect(self.ManageConn)
