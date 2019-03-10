@@ -1,4 +1,5 @@
 #####################################################################################
+# Camaguey University Electromechanic Faculty, Electric Engineering Department      #
 # ALTERA Cyclone II JTAG app uploader for IZEL FPGA soc.   10/3/2019 2:20PM         #
 # Copyright (C) 2018 Yosel de Jesus Balibrea Lastre <yosel.balibrea@reduc.edu.cu>   #
 #                                                                                   #
