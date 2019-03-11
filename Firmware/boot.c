@@ -1,6 +1,6 @@
 #include "stdarg.h"
 #include "./libs/uart.h"
-//#include "./libs/zpio.h"
+#include "./libs/zpio.h"
 #include "./libs/spi.h"
 #include "./libs/small_printf.h"
 #include "./libs/fat_filelib.h"
@@ -79,7 +79,7 @@ int main()
     printf("1 : Boot from JTAG\n");
     opt = get_number();
 
-    if(!opt){
+    if(!opt || (ioRead()&0x0001)){
         // Initialise media
         spi_init();
 

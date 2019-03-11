@@ -24,6 +24,7 @@ MINSTARTUP_OBJ = $(patsubst $(STARTUP_DIR)/%.s,$(BUILD_DIR)/%.o,$(MINSTARTUP_SRC
 
 COMMON_SRC = $(COMMON_DIR)/small_printf.c $(COMMON_DIR)/uart.c $(COMMON_DIR)/uart.h \
 	$(COMMON_DIR)/spi.h $(COMMON_DIR)/spi.c \
+	$(COMMON_DIR)/zpio.c $(COMMON_DIR)/zpio.h \
 	$(COMMON_DIR)/fat_filelib.h $(COMMON_DIR)/fat_write.h $(COMMON_DIR)/fat_write.c $(COMMON_DIR)/fat_types.h $(COMMON_DIR)/fat_table.h \
 	$(COMMON_DIR)/fat_string.h $(COMMON_DIR)/fat_table.c $(COMMON_DIR)/fat_string.c $(COMMON_DIR)/fat_misc.c $(COMMON_DIR)/fat_format.c \
 	$(COMMON_DIR)/fat_opts.h $(COMMON_DIR)/fat_misc.h $(COMMON_DIR)/fat_list.h $(COMMON_DIR)/fat_format.h $(COMMON_DIR)/fat_defs.h \

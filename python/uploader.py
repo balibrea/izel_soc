@@ -153,11 +153,19 @@ class Uploader(QWidget):
             self.successLabel.setText("No connection found")
             return
 
+        print self.NetMgr.soc.recv(150)
+
         if len(self.data) > 0:
             for i in range(len(self.data)):
                 #send data[i] and update progress bar
                 self.NetMgr.SendData(self.data[i])
+                print self.NetMgr.soc.recv(16)
                 self.progress.setValue(((1+i)*100)/len(self.data))
+
+            # Is done.
+            self.NetMgr.SendData('E')
+            self.NetMgr.SendData('N')
+            self.NetMgr.SendData('D')
 
             self.successLabel.setStyleSheet("QWidget { background-color: green }")
             self.successLabel.setText(" Success ")
