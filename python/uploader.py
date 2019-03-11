@@ -159,7 +159,7 @@ class Uploader(QWidget):
             for i in range(len(self.data)):
                 #send data[i] and update progress bar
                 self.NetMgr.SendData(self.data[i])
-                print self.NetMgr.soc.recv(16)
+                # ~ print self.NetMgr.soc.recv(16)
                 self.progress.setValue(((1+i)*100)/len(self.data))
 
             # Is done.
