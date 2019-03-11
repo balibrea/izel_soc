@@ -10,8 +10,8 @@ Configuración de la Memoria
 Nombre           Origen             Longitud           Atributos
 BOOT             0x40000000         0x00000060         xr
 TRAP             0x40000060         0x00000000         xr
-CODE             0x40000060         0x0000ffff         xr
-EXRAM            0x007ff000         0x00001400         rw
+CODE             0x40000060         0x0000ffa8         xr
+EXRAM            0x007ff000         0x00001000         rw
 *default*        0x00000000         0xffffffff
 
 Guión del enlazador y mapa de memoria
@@ -43,7 +43,7 @@ LOAD zpu_obj/boot.o
                 0x40000018                _inthandler_fptr
                 0x4000000c                _break
 
-.text           0x40000060     0x32c4
+.text           0x40000060     0x3324
                 0x40000060                . = ALIGN (0x4)
  *(.text)
  .text          0x40000060       0x80 zpu_obj/mincrt0.o
@@ -157,52 +157,49 @@ LOAD zpu_obj/boot.o
                 0x4000307e                next_word
                 0x40002c4e                strlen
                 0x40002e64                strchr
- .text          0x400030e5      0x23e zpu_obj/boot.o
-                                0x26d (tamaño antes de la relajación)
+ .text          0x400030e5      0x29f zpu_obj/boot.o
+                                0x2d4 (tamaño antes de la relajación)
                 0x40003184                __udivsi3
                 0x40003197                __umodsi3
                 0x400031aa                main
                 0x40003131                __divsi3
                 0x400030e5                __modsi3
  *(.text.*)
-                0x40003324                . = ALIGN (0x4)
- *fill*         0x40003323        0x1 00
- *fill*         0x40003324        0x0 00
- *fill*         0x40003324        0x0 00
- *fill*         0x40003324        0x0 00
- *fill*         0x40003324        0x0 00
-                0x40003324                __ctors_start__ = .
+                0x40003384                . = ALIGN (0x4)
+ *fill*         0x40003384        0x0 00
+ *fill*         0x40003384        0x0 00
+                0x40003384                __ctors_start__ = .
  *(.ctors)
  *(.ctors.*)
-                0x40003324                __ctors_end__ = .
-                0x40003324                . = ALIGN (0x4)
-                0x40003324                __dtors_start__ = .
+                0x40003384                __ctors_end__ = .
+                0x40003384                . = ALIGN (0x4)
+                0x40003384                __dtors_start__ = .
  *(.dtors)
  *(.dtors.*)
-                0x40003324                __dtors_end__ = .
+                0x40003384                __dtors_end__ = .
 
-.rodata         0x40003324      0x1f8
+.rodata         0x40003384      0x264
  *(.rodata)
- .rodata        0x40003324       0x10 zpu_obj/mincrt0.o
+ .rodata        0x40003384       0x10 zpu_obj/mincrt0.o
  *(.rodata.*)
  .rodata.str1.4
-                0x40003334        0x4 zpu_obj/uart.o
+                0x40003394        0x4 zpu_obj/uart.o
  .rodata.str1.4
-                0x40003338       0x60 zpu_obj/spi.o
+                0x40003398       0x60 zpu_obj/spi.o
  .rodata.str1.4
-                0x40003398       0x50 zpu_obj/fat_filelib.o
+                0x400033f8       0x50 zpu_obj/fat_filelib.o
  .rodata.str1.4
-                0x400033e8       0x9c zpu_obj/fat_access.o
+                0x40003448       0x9c zpu_obj/fat_access.o
  .rodata.str1.4
-                0x40003484       0x97 zpu_obj/boot.o
-                                 0x98 (tamaño antes de la relajación)
-                0x4000351c                . = ALIGN (0x4)
- *fill*         0x4000351b        0x1 00
- *fill*         0x4000351c        0x0 00
- *fill*         0x4000351c        0x0 00
- *fill*         0x4000351c        0x0 00
- *fill*         0x4000351c        0x0 00
-                0x4000351c                _romend = .
+                0x400034e4      0x103 zpu_obj/boot.o
+                                0x104 (tamaño antes de la relajación)
+                0x400035e8                . = ALIGN (0x4)
+ *fill*         0x400035e7        0x1 00
+ *fill*         0x400035e8        0x0 00
+ *fill*         0x400035e8        0x0 00
+ *fill*         0x400035e8        0x0 00
+ *fill*         0x400035e8        0x0 00
+                0x400035e8                _romend = .
 
 .data           0x40000060        0x0
                 0x40000060                _data = .

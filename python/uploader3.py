@@ -53,11 +53,8 @@ class NetWorker:
         # ~ self.conn = self.Open(host, port)
 
     # TODO
-    def SendData(self, data):
-        if self.is_connected:
-            self.soc.send(data)
-        else:
-            print "No connection"
+    def SendData(self, conn, data):
+        conn.send(data)
 
     def Write_bin_Data(self, conn, intValue):
         size = 8
@@ -76,7 +73,7 @@ class NetWorker:
                 data += more
             return data
         else:
-            print "No connection available"
+            print("No connection available")
 
 
 class Uploader(QWidget):
@@ -130,8 +127,7 @@ class Uploader(QWidget):
         else:
             # is calling for disconnect
             self.NetMgr.Open()
-            if self.NetMgr.is_connected:
-                self.connectButton.setText("Disconnect")
+            self.connectButton.setText("Disconnect")
 
     def OpenFile(self):
         options = QFileDialog.Options()
