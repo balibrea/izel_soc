@@ -153,7 +153,7 @@ class Uploader(QWidget):
             self.successLabel.setText("No connection found")
             return
 
-        print self.NetMgr.soc.recv(150)
+        #print self.NetMgr.soc.recv(150)
 
         if len(self.data) > 0:
             for i in range(len(self.data)):

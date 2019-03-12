@@ -53,8 +53,11 @@ class NetWorker:
         # ~ self.conn = self.Open(host, port)
 
     # TODO
-    def SendData(self, conn, data):
-        conn.send(data)
+    def SendData(self, data):
+        if self.is_connected:
+            self.soc.send(data)
+        else:
+            print("No connection")
 
     def Write_bin_Data(self, conn, intValue):
         size = 8
@@ -127,7 +130,8 @@ class Uploader(QWidget):
         else:
             # is calling for disconnect
             self.NetMgr.Open()
-            self.connectButton.setText("Disconnect")
+            if self.NetMgr.is_connected:
+                self.connectButton.setText("Disconnect")
 
     def OpenFile(self):
         options = QFileDialog.Options()
@@ -149,11 +153,19 @@ class Uploader(QWidget):
             self.successLabel.setText("No connection found")
             return
 
+        #print self.NetMgr.soc.recv(150)
+
         if len(self.data) > 0:
             for i in range(len(self.data)):
                 #send data[i] and update progress bar
                 self.NetMgr.SendData(self.data[i])
+                # ~ print self.NetMgr.soc.recv(16)
                 self.progress.setValue(((1+i)*100)/len(self.data))
+
+            # Is done.
+            self.NetMgr.SendData('E')
+            self.NetMgr.SendData('N')
+            self.NetMgr.SendData('D')
 
             self.successLabel.setStyleSheet("QWidget { background-color: green }")
             self.successLabel.setText(" Success ")
