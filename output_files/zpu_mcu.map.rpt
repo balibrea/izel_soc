@@ -1,5 +1,5 @@
 Analysis & Synthesis report for zpu_mcu
-Sat Feb 23 22:24:00 2019
+Tue Mar 12 17:29:08 2019
 Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -155,15 +155,15 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Feb 23 22:24:00 2019           ;
+; Analysis & Synthesis Status        ; Successful - Tue Mar 12 17:29:08 2019           ;
 ; Quartus II 32-bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; zpu_mcu                                         ;
 ; Top-level Entity Name              ; zpu_mcu                                         ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 4,792                                           ;
-;     Total combinational functions  ; 3,824                                           ;
-;     Dedicated logic registers      ; 2,645                                           ;
-; Total registers                    ; 2645                                            ;
+; Total logic elements               ; 4,758                                           ;
+;     Total combinational functions  ; 3,790                                           ;
+;     Dedicated logic registers      ; 2,613                                           ;
+; Total registers                    ; 2613                                            ;
 ; Total pins                         ; 283                                             ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 181,760                                         ;
@@ -366,20 +366,20 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+---------------------------------------------------+
 ; Resource                                    ; Usage                                             ;
 +---------------------------------------------+---------------------------------------------------+
-; Estimated Total logic elements              ; 4,792                                             ;
+; Estimated Total logic elements              ; 4,758                                             ;
 ;                                             ;                                                   ;
-; Total combinational functions               ; 3824                                              ;
+; Total combinational functions               ; 3790                                              ;
 ; Logic element usage by number of LUT inputs ;                                                   ;
-;     -- 4 input functions                    ; 1777                                              ;
-;     -- 3 input functions                    ; 1234                                              ;
-;     -- <=2 input functions                  ; 813                                               ;
+;     -- 4 input functions                    ; 1779                                              ;
+;     -- 3 input functions                    ; 1203                                              ;
+;     -- <=2 input functions                  ; 808                                               ;
 ;                                             ;                                                   ;
 ; Logic elements by mode                      ;                                                   ;
-;     -- normal mode                          ; 3198                                              ;
+;     -- normal mode                          ; 3164                                              ;
 ;     -- arithmetic mode                      ; 626                                               ;
 ;                                             ;                                                   ;
-; Total registers                             ; 2645                                              ;
-;     -- Dedicated logic registers            ; 2645                                              ;
+; Total registers                             ; 2613                                              ;
+;     -- Dedicated logic registers            ; 2613                                              ;
 ;     -- I/O registers                        ; 0                                                 ;
 ;                                             ;                                                   ;
 ; I/O pins                                    ; 283                                               ;
@@ -389,9 +389,9 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;     -- PLLs                                 ; 1                                                 ;
 ;                                             ;                                                   ;
 ; Maximum fan-out node                        ; Clock_50to100:mypll|altpll:altpll_component|_clk0 ;
-; Maximum fan-out                             ; 2548                                              ;
-; Total fan-out                               ; 23517                                             ;
-; Average fan-out                             ; 3.41                                              ;
+; Maximum fan-out                             ; 2516                                              ;
+; Total fan-out                               ; 23326                                             ;
+; Average fan-out                             ; 3.42                                              ;
 +---------------------------------------------+---------------------------------------------------+
 
 
@@ -400,10 +400,10 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +------------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                                             ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                 ; Library Name ;
 +------------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |zpu_mcu                                                               ; 3824 (1)          ; 2645 (0)     ; 181760      ; 10           ; 4       ; 3         ; 283  ; 0            ; |zpu_mcu                                                                                                                                                                                            ; work         ;
+; |zpu_mcu                                                               ; 3790 (1)          ; 2613 (0)     ; 181760      ; 10           ; 4       ; 3         ; 283  ; 0            ; |zpu_mcu                                                                                                                                                                                            ; work         ;
 ;    |Clock_50to100:mypll|                                               ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |zpu_mcu|Clock_50to100:mypll                                                                                                                                                                        ; work         ;
 ;       |altpll:altpll_component|                                        ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |zpu_mcu|Clock_50to100:mypll|altpll:altpll_component                                                                                                                                                ; work         ;
-;    |VirtualToplevel:myVirtualToplevel|                                 ; 3563 (321)        ; 2462 (223)   ; 181760      ; 10           ; 4       ; 3         ; 0    ; 0            ; |zpu_mcu|VirtualToplevel:myVirtualToplevel                                                                                                                                                          ; work         ;
+;    |VirtualToplevel:myVirtualToplevel|                                 ; 3530 (321)        ; 2430 (223)   ; 181760      ; 10           ; 4       ; 3         ; 0    ; 0            ; |zpu_mcu|VirtualToplevel:myVirtualToplevel                                                                                                                                                          ; work         ;
 ;       |DMACache:mydmacache|                                            ; 784 (704)         ; 441 (364)    ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache                                                                                                                                      ; work         ;
 ;          |DMACacheRAM:myDMACacheRAM|                                   ; 22 (22)           ; 35 (35)      ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|DMACacheRAM:myDMACacheRAM                                                                                                            ; work         ;
 ;             |altsyncram:ram_rtl_0|                                     ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|DMACacheRAM:myDMACacheRAM|altsyncram:ram_rtl_0                                                                                       ; work         ;
@@ -480,15 +480,15 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;                   |sld_virtual_jtag_basic:sld_virtual_jtag_basic_inst| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|usb_jtag_uart:usb_jtag|jtag_uart:usb_uart|vjtag:vjtag|sld_virtual_jtag:sld_virtual_jtag_component|sld_virtual_jtag_basic:sld_virtual_jtag_basic_inst     ; work         ;
 ;       |vga_controller:myvga|                                           ; 65 (21)           ; 115 (84)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|vga_controller:myvga                                                                                                                                     ; work         ;
 ;          |video_vga_master:myVgaMaster|                                ; 44 (44)           ; 31 (31)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|vga_controller:myvga|video_vga_master:myVgaMaster                                                                                                        ; work         ;
-;       |zpu_core_flex:zpu|                                              ; 1080 (1052)       ; 382 (382)    ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|zpu_core_flex:zpu                                                                                                                                        ; work         ;
+;       |zpu_core_flex:zpu|                                              ; 1047 (1019)       ; 350 (350)    ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|zpu_core_flex:zpu                                                                                                                                        ; work         ;
 ;          |lpm_mult:Mult0|                                              ; 28 (0)            ; 0 (0)        ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|zpu_core_flex:zpu|lpm_mult:Mult0                                                                                                                         ; work         ;
 ;             |mult_l8t:auto_generated|                                  ; 28 (28)           ; 0 (0)        ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|zpu_core_flex:zpu|lpm_mult:Mult0|mult_l8t:auto_generated                                                                                                 ; work         ;
-;    |audio_top:\sound1:myaudio|                                         ; 113 (0)           ; 84 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |zpu_mcu|audio_top:\sound1:myaudio                                                                                                                                                                  ; work         ;
-;       |I2C_AV_Config:audio_config|                                     ; 88 (45)           ; 61 (37)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |zpu_mcu|audio_top:\sound1:myaudio|I2C_AV_Config:audio_config                                                                                                                                       ; work         ;
-;          |I2C_Controller:u0|                                           ; 43 (43)           ; 24 (24)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |zpu_mcu|audio_top:\sound1:myaudio|I2C_AV_Config:audio_config|I2C_Controller:u0                                                                                                                     ; work         ;
+;    |audio_top:\sound1:myaudio|                                         ; 114 (0)           ; 84 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |zpu_mcu|audio_top:\sound1:myaudio                                                                                                                                                                  ; work         ;
+;       |I2C_AV_Config:audio_config|                                     ; 89 (45)           ; 61 (37)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |zpu_mcu|audio_top:\sound1:myaudio|I2C_AV_Config:audio_config                                                                                                                                       ; work         ;
+;          |I2C_Controller:u0|                                           ; 44 (44)           ; 24 (24)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |zpu_mcu|audio_top:\sound1:myaudio|I2C_AV_Config:audio_config|I2C_Controller:u0                                                                                                                     ; work         ;
 ;       |audio_shifter:audio_shifter|                                    ; 25 (25)           ; 23 (23)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |zpu_mcu|audio_top:\sound1:myaudio|audio_shifter:audio_shifter                                                                                                                                      ; work         ;
-;    |sld_hub:auto_hub|                                                  ; 111 (1)           ; 78 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |zpu_mcu|sld_hub:auto_hub                                                                                                                                                                           ; work         ;
-;       |sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|                   ; 110 (75)          ; 78 (50)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |zpu_mcu|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst                                                                                                                              ; work         ;
+;    |sld_hub:auto_hub|                                                  ; 109 (1)           ; 78 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |zpu_mcu|sld_hub:auto_hub                                                                                                                                                                           ; work         ;
+;       |sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|                   ; 108 (73)          ; 78 (50)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |zpu_mcu|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst                                                                                                                              ; work         ;
 ;          |sld_rom_sr:hub_info_reg|                                     ; 18 (18)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |zpu_mcu|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_rom_sr:hub_info_reg                                                                                                      ; work         ;
 ;          |sld_shadow_jsm:shadow_jsm|                                   ; 17 (17)           ; 19 (19)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |zpu_mcu|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_shadow_jsm:shadow_jsm                                                                                                    ; work         ;
 ;    |video_vga_dither:\dither1:mydither|                                ; 36 (36)           ; 21 (21)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |zpu_mcu|video_vga_dither:\dither1:mydither                                                                                                                                                         ; work         ;
@@ -1284,12 +1284,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 2645  ;
+; Total registers                              ; 2613  ;
 ; Number of registers using Synchronous Clear  ; 97    ;
 ; Number of registers using Synchronous Load   ; 383   ;
 ; Number of registers using Asynchronous Clear ; 625   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 1986  ;
+; Number of registers using Clock Enable       ; 1954  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -1299,9 +1299,9 @@ Encoding Type:  One-Hot
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
 ; Inverted Register                                                                                                                                                                   ; Fan out ;
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
-; audio_top:\sound1:myaudio|I2C_AV_Config:audio_config|I2C_Controller:u0|SD_COUNTER[0]                                                                                                ; 19      ;
-; audio_top:\sound1:myaudio|I2C_AV_Config:audio_config|I2C_Controller:u0|SD_COUNTER[2]                                                                                                ; 16      ;
-; audio_top:\sound1:myaudio|I2C_AV_Config:audio_config|I2C_Controller:u0|SD_COUNTER[3]                                                                                                ; 21      ;
+; audio_top:\sound1:myaudio|I2C_AV_Config:audio_config|I2C_Controller:u0|SD_COUNTER[0]                                                                                                ; 18      ;
+; audio_top:\sound1:myaudio|I2C_AV_Config:audio_config|I2C_Controller:u0|SD_COUNTER[2]                                                                                                ; 17      ;
+; audio_top:\sound1:myaudio|I2C_AV_Config:audio_config|I2C_Controller:u0|SD_COUNTER[3]                                                                                                ; 20      ;
 ; audio_top:\sound1:myaudio|I2C_AV_Config:audio_config|I2C_Controller:u0|SD_COUNTER[1]                                                                                                ; 14      ;
 ; audio_top:\sound1:myaudio|I2C_AV_Config:audio_config|I2C_Controller:u0|SD_COUNTER[4]                                                                                                ; 12      ;
 ; audio_top:\sound1:myaudio|I2C_AV_Config:audio_config|I2C_Controller:u0|SD_COUNTER[5]                                                                                                ; 11      ;
@@ -1322,16 +1322,16 @@ Encoding Type:  One-Hot
 ; VirtualToplevel:myVirtualToplevel|reset_counter[15]                                                                                                                                 ; 2       ;
 ; VirtualToplevel:myVirtualToplevel|simple_uart:myuart|txd                                                                                                                            ; 2       ;
 ; VirtualToplevel:myVirtualToplevel|spi_cs                                                                                                                                            ; 2       ;
-; audio_top:\sound1:myaudio|I2C_AV_Config:audio_config|I2C_Controller:u0|SCLK                                                                                                         ; 2       ;
+; audio_top:\sound1:myaudio|I2C_AV_Config:audio_config|I2C_Controller:u0|SCLK                                                                                                         ; 3       ;
 ; VirtualToplevel:myVirtualToplevel|usb_jtag_uart:usb_jtag|jtag_uart:usb_uart|ir[0]                                                                                                   ; 7       ;
 ; VirtualToplevel:myVirtualToplevel|usb_jtag_uart:usb_jtag|jtag_uart:usb_uart|ir[1]                                                                                                   ; 15      ;
 ; VirtualToplevel:myVirtualToplevel|sdram_cached:mysdram|slot2_bank[1]                                                                                                                ; 4       ;
 ; VirtualToplevel:myVirtualToplevel|sdram_cached:mysdram|slot2_bank[0]                                                                                                                ; 5       ;
 ; audio_top:\sound1:myaudio|I2C_AV_Config:audio_config|I2C_Controller:u0|END                                                                                                          ; 5       ;
-; VirtualToplevel:myVirtualToplevel|usb_jtag_uart:usb_jtag|write_reg                                                                                                                  ; 4       ;
+; VirtualToplevel:myVirtualToplevel|usb_jtag_uart:usb_jtag|write_reg                                                                                                                  ; 3       ;
 ; audio_top:\sound1:myaudio|I2C_AV_Config:audio_config|I2C_Controller:u0|SDO                                                                                                          ; 4       ;
-; VirtualToplevel:myVirtualToplevel|zpu_core_flex:zpu|fetchneeded                                                                                                                     ; 20      ;
-; VirtualToplevel:myVirtualToplevel|zpu_core_flex:zpu|pc[30]                                                                                                                          ; 38      ;
+; VirtualToplevel:myVirtualToplevel|zpu_core_flex:zpu|pc[30]                                                                                                                          ; 29      ;
+; VirtualToplevel:myVirtualToplevel|zpu_core_flex:zpu|fetchneeded                                                                                                                     ; 7       ;
 ; VirtualToplevel:myVirtualToplevel|sdram_cached:mysdram|writecache_dtack                                                                                                             ; 3       ;
 ; VirtualToplevel:myVirtualToplevel|sound_wrapper:myaudio|sound_controller:channel3|channel_fromhost.setreqlen                                                                        ; 21      ;
 ; VirtualToplevel:myVirtualToplevel|sound_wrapper:myaudio|sound_controller:channel1|channel_fromhost.setreqlen                                                                        ; 21      ;
@@ -1425,124 +1425,124 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                           ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------------------+
-; 3:1                ; 14 bits   ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; Yes        ; |zpu_mcu|audio_top:\sound1:myaudio|audio_shifter:audio_shifter|shift[11]                                             ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|sdram_write[12]                                                           ;
+; 3:1                ; 14 bits   ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; Yes        ; |zpu_mcu|audio_top:\sound1:myaudio|audio_shifter:audio_shifter|shift[9]                                              ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|sdram_write[15]                                                           ;
 ; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|simple_uart:myuart|txcounter[1]                                           ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|ser_txdata[0]                                                             ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|io_data_i[12]                                                             ;
-; 3:1                ; 24 bits   ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|timer_controller:mytimer|timer_limit[0][5]                                ;
-; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|FIFO_Counter:\FIFOCounters:0:myfifocounter|counter[1] ;
-; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|FIFO_Counter:\FIFOCounters:5:myfifocounter|counter[1] ;
-; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|FIFO_Counter:\FIFOCounters:4:myfifocounter|counter[2] ;
-; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|FIFO_Counter:\FIFOCounters:3:myfifocounter|counter[6] ;
-; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|FIFO_Counter:\FIFOCounters:2:myfifocounter|counter[0] ;
-; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|FIFO_Counter:\FIFOCounters:1:myfifocounter|counter[1] ;
-; 4:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|spi_interface:spi|shiftcnt[5]                                             ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|spi_interface:spi|sd_shift[4]                                             ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|ser_txdata[2]                                                             ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|io_data_i[1]                                                              ;
+; 3:1                ; 24 bits   ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|timer_controller:mytimer|timer_limit[0][22]                               ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|FIFO_Counter:\FIFOCounters:0:myfifocounter|counter[5] ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|FIFO_Counter:\FIFOCounters:5:myfifocounter|counter[0] ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|FIFO_Counter:\FIFOCounters:4:myfifocounter|counter[1] ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|FIFO_Counter:\FIFOCounters:3:myfifocounter|counter[1] ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|FIFO_Counter:\FIFOCounters:2:myfifocounter|counter[6] ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|FIFO_Counter:\FIFOCounters:1:myfifocounter|counter[6] ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|spi_interface:spi|shiftcnt[2]                                             ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|spi_interface:spi|sd_shift[7]                                             ;
 ; 6:1                ; 3 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|cache_wraddr[3]                                       ;
 ; 4:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|simple_uart:myuart|txbuffer[16]                                           ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|simple_uart:myuart|txbuffer[2]                                            ;
-; 4:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|internals[5].wrptr_next[5]                            ;
-; 4:1                ; 31 bits   ; 62 LEs        ; 31 LEs               ; 31 LEs                 ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|internals[5].addr[5]                                  ;
-; 4:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|internals[4].wrptr_next[3]                            ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|simple_uart:myuart|txbuffer[1]                                            ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|internals[5].wrptr_next[4]                            ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 31 LEs               ; 31 LEs                 ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|internals[5].addr[28]                                 ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|internals[4].wrptr_next[4]                            ;
 ; 4:1                ; 31 bits   ; 62 LEs        ; 31 LEs               ; 31 LEs                 ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|internals[4].addr[25]                                 ;
-; 4:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|internals[3].wrptr[5]                                 ;
-; 4:1                ; 31 bits   ; 62 LEs        ; 31 LEs               ; 31 LEs                 ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|internals[3].addr[0]                                  ;
-; 4:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|internals[2].wrptr[5]                                 ;
-; 4:1                ; 31 bits   ; 62 LEs        ; 31 LEs               ; 31 LEs                 ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|internals[2].addr[15]                                 ;
-; 4:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|internals[1].wrptr[5]                                 ;
-; 4:1                ; 31 bits   ; 62 LEs        ; 31 LEs               ; 31 LEs                 ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|internals[1].addr[22]                                 ;
-; 4:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|internals[0].wrptr[3]                                 ;
-; 4:1                ; 31 bits   ; 62 LEs        ; 31 LEs               ; 31 LEs                 ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|internals[0].addr[8]                                  ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|simple_uart:myuart|rxcounter[4]                                           ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|internals[3].wrptr[4]                                 ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 31 LEs               ; 31 LEs                 ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|internals[3].addr[25]                                 ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|internals[2].wrptr_next[4]                            ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 31 LEs               ; 31 LEs                 ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|internals[2].addr[23]                                 ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|internals[1].wrptr[4]                                 ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 31 LEs               ; 31 LEs                 ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|internals[1].addr[24]                                 ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|internals[0].wrptr_next[5]                            ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 31 LEs               ; 31 LEs                 ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|internals[0].addr[31]                                 ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|simple_uart:myuart|rxcounter[2]                                           ;
 ; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|internals[5].rdptr[3]                                 ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|internals[5].rdptr[2]                                 ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|internals[5].rdptr[0]                                 ;
 ; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|internals[4].rdptr[5]                                 ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|internals[4].rdptr[2]                                 ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|internals[3].rdptr[4]                                 ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|internals[3].rdptr[2]                                 ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|internals[2].rdptr[4]                                 ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|internals[4].rdptr[0]                                 ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|internals[3].rdptr[5]                                 ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|internals[3].rdptr[0]                                 ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|internals[2].rdptr[3]                                 ;
 ; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|internals[2].rdptr[0]                                 ;
-; 4:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|internals[1].rdptr[1]                                 ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|internals[0].rdptr[5]                                 ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|internals[0].rdptr[1]                                 ;
-; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|zpu_core_flex:zpu|shift_count[2]                                          ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|sdram_cached:mysdram|slot1_bank[1]                                        ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|data_from_ram[14]                                     ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|sdram_cached:mysdram|TwoWayCache:\GENCACHE:mytwc|data_ports_w[6]          ;
-; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|zpu_core_flex:zpu|shift_reg[18]                                           ;
-; 5:1                ; 26 bits   ; 78 LEs        ; 0 LEs                ; 78 LEs                 ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|sdram_addr[17]                                                            ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|internals[1].rdptr[0]                                 ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|internals[0].rdptr[3]                                 ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|internals[0].rdptr[0]                                 ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|zpu_core_flex:zpu|shift_count[3]                                          ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|sdram_cached:mysdram|slot1_bank[0]                                        ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|data_from_ram[5]                                      ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|sdram_cached:mysdram|TwoWayCache:\GENCACHE:mytwc|data_ports_w[13]         ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|zpu_core_flex:zpu|shift_reg[21]                                           ;
+; 5:1                ; 26 bits   ; 78 LEs        ; 0 LEs                ; 78 LEs                 ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|sdram_addr[16]                                                            ;
 ; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|sdram_cached:mysdram|TwoWayCache:\GENCACHE:mytwc|readword[1]              ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|usb_jtag_uart:usb_jtag|jtag_uart:usb_uart|shift_buffer[7]                 ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|usb_jtag_uart:usb_jtag|jtag_uart:usb_uart|shift_buffer[0]                 ;
-; 4:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|internals[1].count[2]                                 ;
-; 6:1                ; 26 bits   ; 104 LEs       ; 26 LEs               ; 78 LEs                 ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|zpu_core_flex:zpu|out_mem_addr[14]                                        ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|sdram_cached:mysdram|TwoWayCache:\GENCACHE:mytwc|data_ports_w_hi[4]       ;
-; 6:1                ; 9 bits    ; 36 LEs        ; 9 LEs                ; 27 LEs                 ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|simple_uart:myuart|rxbuffer[0]                                            ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|usb_jtag_uart:usb_jtag|jtag_uart:usb_uart|shift_buffer[4]                 ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|usb_jtag_uart:usb_jtag|jtag_uart:usb_uart|shift_buffer[3]                 ;
+; 4:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|internals[1].count[16]                                ;
+; 6:1                ; 26 bits   ; 104 LEs       ; 26 LEs               ; 78 LEs                 ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|zpu_core_flex:zpu|out_mem_addr[2]                                         ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|sdram_cached:mysdram|TwoWayCache:\GENCACHE:mytwc|data_ports_w_hi[14]      ;
+; 6:1                ; 9 bits    ; 36 LEs        ; 9 LEs                ; 27 LEs                 ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|simple_uart:myuart|rxbuffer[5]                                            ;
 ; 7:1                ; 2 bits    ; 8 LEs         ; 2 LEs                ; 6 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|io_wEn                                                                    ;
-; 5:1                ; 16 bits   ; 48 LEs        ; 32 LEs               ; 16 LEs                 ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|internals[5].count[0]                                 ;
-; 5:1                ; 16 bits   ; 48 LEs        ; 32 LEs               ; 16 LEs                 ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|internals[4].count[6]                                 ;
-; 5:1                ; 16 bits   ; 48 LEs        ; 32 LEs               ; 16 LEs                 ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|internals[3].count[15]                                ;
-; 5:1                ; 16 bits   ; 48 LEs        ; 32 LEs               ; 16 LEs                 ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|internals[2].count[3]                                 ;
-; 5:1                ; 17 bits   ; 51 LEs        ; 34 LEs               ; 17 LEs                 ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|internals[0].count[4]                                 ;
-; 8:1                ; 3 bits    ; 15 LEs        ; 12 LEs               ; 3 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|activechannel[1]                                      ;
-; 7:1                ; 25 bits   ; 100 LEs       ; 50 LEs               ; 50 LEs                 ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|zpu_core_flex:zpu|pc[23]                                                  ;
-; 8:1                ; 2 bits    ; 10 LEs        ; 2 LEs                ; 8 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|sdram_cached:mysdram|cas_dqm[0]                                           ;
-; 8:1                ; 2 bits    ; 10 LEs        ; 2 LEs                ; 8 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|zpu_core_flex:zpu|out_mem_addr[1]                                         ;
-; 8:1                ; 5 bits    ; 25 LEs        ; 15 LEs               ; 10 LEs                 ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|zpu_core_flex:zpu|pc[9]                                                   ;
-; 9:1                ; 2 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|zpu_core_flex:zpu|out_mem_bEnable                                         ;
-; 10:1               ; 6 bits    ; 36 LEs        ; 6 LEs                ; 30 LEs                 ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|internals[5].fill                                     ;
-; 11:1               ; 2 bits    ; 14 LEs        ; 4 LEs                ; 10 LEs                 ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|sdram_cached:mysdram|casaddr[2]                                           ;
-; 11:1               ; 5 bits    ; 35 LEs        ; 10 LEs               ; 25 LEs                 ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|sdram_cached:mysdram|casaddr[8]                                           ;
-; 12:1               ; 2 bits    ; 16 LEs        ; 12 LEs               ; 4 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|sdram_cached:mysdram|dqm[1]                                               ;
-; 261:1              ; 8 bits    ; 1392 LEs      ; 8 LEs                ; 1384 LEs               ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|host_to_spi[2]                                                            ;
-; 260:1              ; 16 bits   ; 2768 LEs      ; 32 LEs               ; 2736 LEs               ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|mem_read[27]                                                              ;
-; 260:1              ; 2 bits    ; 346 LEs       ; 6 LEs                ; 340 LEs                ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|mem_read[14]                                                              ;
-; 260:1              ; 2 bits    ; 346 LEs       ; 8 LEs                ; 338 LEs                ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|mem_read[12]                                                              ;
-; 259:1              ; 2 bits    ; 344 LEs       ; 8 LEs                ; 336 LEs                ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|mem_read[8]                                                               ;
-; 7:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|sdram_cached:mysdram|sdaddr[8]                                            ;
-; 7:1                ; 4 bits    ; 16 LEs        ; 12 LEs               ; 4 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|sdram_cached:mysdram|sdaddr[2]                                            ;
-; 7:1                ; 4 bits    ; 16 LEs        ; 12 LEs               ; 4 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|sdram_cached:mysdram|sdaddr[1]                                            ;
-; 261:1              ; 6 bits    ; 1044 LEs      ; 36 LEs               ; 1008 LEs               ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|mem_read[3]                                                               ;
+; 5:1                ; 16 bits   ; 48 LEs        ; 32 LEs               ; 16 LEs                 ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|internals[5].count[3]                                 ;
+; 5:1                ; 16 bits   ; 48 LEs        ; 32 LEs               ; 16 LEs                 ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|internals[4].count[12]                                ;
+; 5:1                ; 16 bits   ; 48 LEs        ; 32 LEs               ; 16 LEs                 ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|internals[3].count[1]                                 ;
+; 5:1                ; 16 bits   ; 48 LEs        ; 32 LEs               ; 16 LEs                 ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|internals[2].count[8]                                 ;
+; 5:1                ; 17 bits   ; 51 LEs        ; 34 LEs               ; 17 LEs                 ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|internals[0].count[16]                                ;
+; 8:1                ; 3 bits    ; 15 LEs        ; 12 LEs               ; 3 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|activechannel[0]                                      ;
+; 7:1                ; 25 bits   ; 100 LEs       ; 50 LEs               ; 50 LEs                 ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|zpu_core_flex:zpu|pc[12]                                                  ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 2 LEs                ; 8 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|sdram_cached:mysdram|cas_dqm[1]                                           ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 2 LEs                ; 8 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|zpu_core_flex:zpu|out_mem_addr[0]                                         ;
+; 8:1                ; 5 bits    ; 25 LEs        ; 15 LEs               ; 10 LEs                 ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|zpu_core_flex:zpu|pc[5]                                                   ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|zpu_core_flex:zpu|out_mem_hEnable                                         ;
+; 10:1               ; 6 bits    ; 36 LEs        ; 6 LEs                ; 30 LEs                 ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|internals[4].fill                                     ;
+; 11:1               ; 2 bits    ; 14 LEs        ; 4 LEs                ; 10 LEs                 ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|sdram_cached:mysdram|casaddr[3]                                           ;
+; 11:1               ; 5 bits    ; 35 LEs        ; 10 LEs               ; 25 LEs                 ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|sdram_cached:mysdram|casaddr[6]                                           ;
+; 12:1               ; 2 bits    ; 16 LEs        ; 12 LEs               ; 4 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|sdram_cached:mysdram|dqm[0]                                               ;
+; 261:1              ; 8 bits    ; 1392 LEs      ; 8 LEs                ; 1384 LEs               ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|host_to_spi[0]                                                            ;
+; 260:1              ; 16 bits   ; 2768 LEs      ; 32 LEs               ; 2736 LEs               ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|mem_read[18]                                                              ;
+; 260:1              ; 2 bits    ; 346 LEs       ; 6 LEs                ; 340 LEs                ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|mem_read[13]                                                              ;
+; 260:1              ; 2 bits    ; 346 LEs       ; 8 LEs                ; 338 LEs                ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|mem_read[11]                                                              ;
+; 259:1              ; 2 bits    ; 344 LEs       ; 8 LEs                ; 336 LEs                ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|mem_read[9]                                                               ;
+; 7:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|sdram_cached:mysdram|sdaddr[9]                                            ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 12 LEs               ; 4 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|sdram_cached:mysdram|sdaddr[7]                                            ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 12 LEs               ; 4 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|sdram_cached:mysdram|sdaddr[5]                                            ;
+; 261:1              ; 6 bits    ; 1044 LEs      ; 36 LEs               ; 1008 LEs               ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|mem_read[6]                                                               ;
 ; 262:1              ; 2 bits    ; 348 LEs       ; 12 LEs               ; 336 LEs                ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|mem_read[1]                                                               ;
-; 20:1               ; 2 bits    ; 26 LEs        ; 12 LEs               ; 14 LEs                 ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|sdram_cached:mysdram|ba[1]                                                ;
-; 24:1               ; 12 bits   ; 192 LEs       ; 48 LEs               ; 144 LEs                ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|zpu_core_flex:zpu|memAAddr[12]                                            ;
-; 29:1               ; 11 bits   ; 209 LEs       ; 33 LEs               ; 176 LEs                ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|zpu_core_flex:zpu|memBAddr[4]                                             ;
+; 20:1               ; 2 bits    ; 26 LEs        ; 12 LEs               ; 14 LEs                 ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|sdram_cached:mysdram|ba[0]                                                ;
+; 24:1               ; 12 bits   ; 192 LEs       ; 48 LEs               ; 144 LEs                ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|zpu_core_flex:zpu|memAAddr[4]                                             ;
+; 29:1               ; 11 bits   ; 209 LEs       ; 33 LEs               ; 176 LEs                ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|zpu_core_flex:zpu|memBAddr[9]                                             ;
 ; 20:1               ; 5 bits    ; 65 LEs        ; 145 LEs              ; -80 LEs                ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|zpu_core_flex:zpu|memAWrite[6]                                            ;
-; 20:1               ; 13 bits   ; 169 LEs       ; 390 LEs              ; -221 LEs               ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|zpu_core_flex:zpu|memAWrite[29]                                           ;
-; 22:1               ; 2 bits    ; 28 LEs        ; 60 LEs               ; -32 LEs                ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|zpu_core_flex:zpu|memAWrite[14]                                           ;
+; 20:1               ; 13 bits   ; 169 LEs       ; 390 LEs              ; -221 LEs               ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|zpu_core_flex:zpu|memAWrite[17]                                           ;
+; 22:1               ; 2 bits    ; 28 LEs        ; 60 LEs               ; -32 LEs                ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|zpu_core_flex:zpu|memAWrite[15]                                           ;
 ; 23:1               ; 6 bits    ; 90 LEs        ; 180 LEs              ; -90 LEs                ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|zpu_core_flex:zpu|memAWrite[12]                                           ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|sdram_cached:mysdram|slot2_bank[1]                                        ;
-; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |zpu_mcu|audio_top:\sound1:myaudio|I2C_AV_Config:audio_config|I2C_Controller:u0|SD_COUNTER[0]                        ;
-; 9:1                ; 16 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|sdram_cached:mysdram|datain[6]                                            ;
-; 29:1               ; 11 bits   ; 209 LEs       ; 22 LEs               ; 187 LEs                ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|zpu_core_flex:zpu|sp[8]                                                   ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |zpu_mcu|audio_top:\sound1:myaudio|I2C_AV_Config:audio_config|I2C_Controller:u0|SD_COUNTER[5]                        ;
+; 9:1                ; 16 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|sdram_cached:mysdram|datain[3]                                            ;
+; 29:1               ; 11 bits   ; 209 LEs       ; 22 LEs               ; 187 LEs                ; Yes        ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|zpu_core_flex:zpu|sp[12]                                                  ;
 ; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|sdram_cached:mysdram|sdram_slot1                                          ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|sdram_cached:mysdram|sdram_slot2                                          ;
-; 3:1                ; 24 bits   ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; No         ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|sdram_cached:mysdram|TwoWayCache:\GENCACHE:mytwc|data_to_cpu[24]          ;
-; 3:1                ; 9 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; No         ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|sdram_cached:mysdram|TwoWayCache:\GENCACHE:mytwc|data_port1_addr[8]       ;
-; 8:1                ; 8 bits    ; 40 LEs        ; 40 LEs               ; 0 LEs                  ; No         ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|zpu_core_flex:zpu|Mux1                                                    ;
-; 4:1                ; 25 bits   ; 50 LEs        ; 50 LEs               ; 0 LEs                  ; No         ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|zpu_core_flex:zpu|decodedOpcode.Decoded_LoadBH                            ;
-; 6:1                ; 51 bits   ; 204 LEs       ; 204 LEs              ; 0 LEs                  ; No         ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|Mux7                                                  ;
+; 3:1                ; 24 bits   ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; No         ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|sdram_cached:mysdram|TwoWayCache:\GENCACHE:mytwc|data_to_cpu[14]          ;
+; 3:1                ; 9 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; No         ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|sdram_cached:mysdram|TwoWayCache:\GENCACHE:mytwc|data_port1_addr[4]       ;
+; 4:1                ; 25 bits   ; 50 LEs        ; 50 LEs               ; 0 LEs                  ; No         ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|zpu_core_flex:zpu|decodedOpcode.Decoded_Sub                               ;
+; 6:1                ; 51 bits   ; 204 LEs       ; 204 LEs              ; 0 LEs                  ; No         ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|Mux20                                                 ;
 ; 4:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|sdram_cached:mysdram|sdram_state                                          ;
-; 6:1                ; 6 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|Mux61                                                 ;
+; 6:1                ; 6 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|Mux57                                                 ;
 ; 5:1                ; 9 bits    ; 27 LEs        ; 27 LEs               ; 0 LEs                  ; No         ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|sdram_cached:mysdram|sdram_state                                          ;
 ; 6:1                ; 3 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|servicechannel                                        ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 40 LEs               ; 0 LEs                  ; No         ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|zpu_core_flex:zpu|Mux5                                                    ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|simple_uart:myuart|Selector3                                              ;
-; 7:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; No         ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|sdram_state.read2                                                         ;
-; 7:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|sdram_state.writeb                                                        ;
+; 7:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; No         ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|sdram_state.idle                                                          ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|sdram_state.write1                                                        ;
 ; 8:1                ; 2 bits    ; 10 LEs        ; 4 LEs                ; 6 LEs                  ; No         ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|simple_uart:myuart|Selector2                                              ;
 ; 8:1                ; 2 bits    ; 10 LEs        ; 4 LEs                ; 6 LEs                  ; No         ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|sdram_cached:mysdram|TwoWayCache:\GENCACHE:mytwc|state                    ;
-; 8:1                ; 8 bits    ; 40 LEs        ; 8 LEs                ; 32 LEs                 ; No         ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|zpu_core_flex:zpu|Selector179                                             ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 8 LEs                ; 32 LEs                 ; No         ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|zpu_core_flex:zpu|Selector173                                             ;
 ; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; No         ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|sdram_cached:mysdram|TwoWayCache:\GENCACHE:mytwc|state                    ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 14 LEs               ; 28 LEs                 ; No         ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|zpu_core_flex:zpu|Selector181                                             ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 14 LEs               ; 28 LEs                 ; No         ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|zpu_core_flex:zpu|Selector190                                             ;
 ; 10:1               ; 2 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|sdram_cached:mysdram|TwoWayCache:\GENCACHE:mytwc|state                    ;
-; 10:1               ; 2 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|zpu_core_flex:zpu|Selector174                                             ;
-; 16:1               ; 2 bits    ; 20 LEs        ; 8 LEs                ; 12 LEs                 ; No         ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|Selector5                                             ;
+; 10:1               ; 2 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|zpu_core_flex:zpu|Selector177                                             ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 8 LEs                ; 12 LEs                 ; No         ; |zpu_mcu|VirtualToplevel:myVirtualToplevel|DMACache:mydmacache|Selector4                                             ;
 ; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |zpu_mcu|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|hub_minor_ver_reg[0]                          ;
 ; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |zpu_mcu|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|mixer_addr_reg[4]                             ;
 ; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; Yes        ; |zpu_mcu|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_rom_sr:hub_info_reg|word_counter[1]       ;
 ; 6:1                ; 3 bits    ; 12 LEs        ; 3 LEs                ; 9 LEs                  ; Yes        ; |zpu_mcu|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|irsr_reg[2]                                   ;
-; 34:1               ; 4 bits    ; 88 LEs        ; 48 LEs               ; 40 LEs                 ; Yes        ; |zpu_mcu|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|design_hash_reg[3]                            ;
+; 34:1               ; 4 bits    ; 88 LEs        ; 60 LEs               ; 28 LEs                 ; Yes        ; |zpu_mcu|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|design_hash_reg[3]                            ;
 ; 20:1               ; 4 bits    ; 52 LEs        ; 32 LEs               ; 20 LEs                 ; Yes        ; |zpu_mcu|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_rom_sr:hub_info_reg|WORD_SR[1]            ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------------------+
 
@@ -2509,7 +2509,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; impl_xor              ; true  ; Enumerated                                                       ;
 ; execute_ram           ; true  ; Enumerated                                                       ;
 ; remap_stack           ; true  ; Enumerated                                                       ;
-; cache                 ; true  ; Enumerated                                                       ;
+; cache                 ; false ; Enumerated                                                       ;
 ; stackbit              ; 30    ; Signed Integer                                                   ;
 ; maxaddrbit            ; 31    ; Signed Integer                                                   ;
 ; maxaddrbitexternalram ; 30    ; Signed Integer                                                   ;
@@ -3485,7 +3485,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------------------+--------------+
 ; Partition Name   ; Elapsed Time ;
 +------------------+--------------+
-; Top              ; 00:00:28     ;
+; Top              ; 00:00:29     ;
 ; sld_hub:auto_hub ; 00:00:01     ;
 +------------------+--------------+
 
@@ -3496,7 +3496,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Sat Feb 23 22:23:15 2019
+    Info: Processing started: Tue Mar 12 17:28:24 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off zpu_mcu -c zpu_mcu
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file rtl/gpio.vhd
@@ -3703,7 +3703,7 @@ Warning (10036): Verilog HDL or VHDL warning at Virtual_Toplevel.vhd(196): objec
 Warning (10036): Verilog HDL or VHDL warning at Virtual_Toplevel.vhd(201): object "sdr_ready" assigned a value but never read
 Warning (10036): Verilog HDL or VHDL warning at Virtual_Toplevel.vhd(238): object "io_En" assigned a value but never read
 Warning (10492): VHDL Process Statement warning at Virtual_Toplevel.vhd(299): signal "reset_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at Virtual_Toplevel.vhd(648): signal "reset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Virtual_Toplevel.vhd(600): signal "reset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Info (12128): Elaborating entity "prog_mem" for hierarchy "VirtualToplevel:myVirtualToplevel|prog_mem:myrom"
 Info (12128): Elaborating entity "usb_jtag_uart" for hierarchy "VirtualToplevel:myVirtualToplevel|usb_jtag_uart:usb_jtag"
 Warning (10036): Verilog HDL or VHDL warning at usb_jtag_uart.vhd(30): object "txmt" assigned a value but never read
@@ -4199,19 +4199,19 @@ Warning (21074): Design contains 10 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "TCS"
     Warning (15610): No output dependent on input pin "AUD_ADCDAT"
     Warning (15610): No output dependent on input pin "UART_RXD"
-Info (21057): Implemented 5337 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 5271 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 29 input pins
     Info (21059): Implemented 142 output pins
     Info (21060): Implemented 116 bidirectional pins
-    Info (21061): Implemented 4920 logic cells
+    Info (21061): Implemented 4854 logic cells
     Info (21064): Implemented 118 RAM segments
     Info (21065): Implemented 1 PLLs
     Info (21062): Implemented 10 DSP elements
 Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 240 warnings
-    Info: Peak virtual memory: 437 megabytes
-    Info: Processing ended: Sat Feb 23 22:24:00 2019
+    Info: Peak virtual memory: 439 megabytes
+    Info: Processing ended: Tue Mar 12 17:29:09 2019
     Info: Elapsed time: 00:00:45
-    Info: Total CPU time (on all processors): 00:00:45
+    Info: Total CPU time (on all processors): 00:00:43
 
 
 +------------------------------------------+

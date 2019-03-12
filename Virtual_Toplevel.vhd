@@ -571,7 +571,7 @@ int_triggers<=(0=>timer_tick,
         IMPL_CALL => true,
         IMPL_SHIFT => true,
         IMPL_XOR => true,
-        CACHE => flase,
+        CACHE => false,
 --      IMPL_EMULATION => minimal,
         REMAP_STACK => true, -- We need to remap the Boot ROM / Stack RAM so we can access SDRAM
         EXECUTE_RAM => true, -- We might need to execute code from SDRAM, too.

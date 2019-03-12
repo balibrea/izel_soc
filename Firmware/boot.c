@@ -68,20 +68,21 @@ void _boot();
 
 int main()
 {
-    FL_FILE *file;
-
     char *ptr = 0x102004;
     int r;
 
     int opt;
-    printf("Boot options:\n");
+    printf("GPIO0 Boot options:\n");
     printf("0 : Boot from SD card\n");
     printf("1 : Boot from JTAG\n");
-    opt = get_number();
+    opt = ioRead()&0x0001;
 
-    if(!opt || (ioRead()&0x0001)){
+    if(!opt){
+        printf("Booting from SD card\n");
         // Initialise media
         spi_init();
+
+        FL_FILE *file;
 
         // Initialise File IO Library
         fl_init();
@@ -101,9 +102,9 @@ int main()
         // Read File
         //int valid = 0;
         while(1){
-            char app_file[9];
+            char app_file[15];
             printf("\nAPP FILE >> ");
-            scan(app_file, 8, 0);
+            scan(app_file, 14, 0);
             file = fl_fopen(app_file, "rb");
             if (file)
             {
@@ -113,16 +114,18 @@ int main()
                 break;
             }
             else
-                printf("ERROR: Read file failed\n");
+                printf("\nERROR: Read file failed\n");
         }
+        fl_fclose(file);
+        fl_shutdown();
+
     }else{
         // TODO
         printf("Booting from JTAG, waiting for uploader\n");
+        int file_len = get_number();
         char in_byte[9];
-        scan(in_byte, 8, 0);
-        while(in_byte != "END"){
-            scan(in_byte, 8, 0);
-        }
+        scan(in_byte, file_len, 0);
+        printf("END");
     }
 
     int *code = 0x00;//0x102004;
@@ -137,12 +140,8 @@ int main()
 
     printf("\n\nEnd... \n");
 
-    fl_fclose(file);
-    fl_shutdown();
-
     _boot();
 
     printf("shutdown.\n");
     return 0;
 }
-
