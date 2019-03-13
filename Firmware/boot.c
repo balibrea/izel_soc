@@ -123,9 +123,10 @@ int main()
         // TODO
         printf("Booting from JTAG, waiting for uploader\n");
         int file_len = get_number();
-        char in_byte[9];
+        char in_byte[file_len];
         scan(in_byte, file_len, 0);
-        printf("END");
+        printf("\nEND");
+        printf(in_byte);
     }
 
     int *code = 0x00;//0x102004;
@@ -140,7 +141,7 @@ int main()
 
     printf("\n\nEnd... \n");
 
-    _boot();
+    //_boot();
 
     printf("shutdown.\n");
     return 0;

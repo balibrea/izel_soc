@@ -1,12 +1,12 @@
-Fitter Status : Successful - Tue Mar 12 17:30:04 2019
+Fitter Status : Successful - Tue Mar 12 23:07:44 2019
 Quartus II 32-bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
 Revision Name : zpu_mcu
 Top-level Entity Name : zpu_mcu
 Family : Cyclone II
 Device : EP2C20F484C7
 Timing Models : Final
-Total logic elements : 4,495 / 18,752 ( 24 % )
-    Total combinational functions : 3,796 / 18,752 ( 20 % )
+Total logic elements : 4,497 / 18,752 ( 24 % )
+    Total combinational functions : 3,799 / 18,752 ( 20 % )
     Dedicated logic registers : 2,589 / 18,752 ( 14 % )
 Total registers : 2589
 Total pins : 283 / 315 ( 90 % )

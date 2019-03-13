@@ -23,6 +23,8 @@ from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 
+from up_gui import *
+
 
 host = 'localhost'
 port = 2323
@@ -83,65 +85,41 @@ class Uploader(QWidget):
     def __init__(self, parent = None):
         super(Uploader, self).__init__(parent)
 
+        self.ui = Ui_Main()
+
+        self.ui.setupUi(self)
+
         #Network Manager
         self.NetMgr = NetWorker(host, port)
 
         #Data buffer
         self.data = ''
 
-        #Main Layout
-        butt_l = QHBoxLayout()
-        butt_l2 = QHBoxLayout()
-        main_l = QVBoxLayout(self)
-
-        self.connectButton = QPushButton(" Connect ")
-        self.browseFileButton = QPushButton(" Browse ")
-        self.sendButton = QPushButton(" Send ")
-        self.fileInLine = QLineEdit()
-        self.successLabel = QLabel()
-        self.progress = QProgressBar()
-        self.progress.setMaximum(100)
-
-        #Ad items to layouts
-        butt_l.addWidget(self.connectButton)
-        butt_l.addWidget(self.fileInLine)
-        butt_l.addWidget(self.browseFileButton)
-        butt_l.addStretch()
-
-        butt_l2.addWidget(self.sendButton)
-        butt_l2.addWidget(self.progress)
-        butt_l2.addWidget(self.successLabel)
-        butt_l2.addStretch()
-
-        main_l.addLayout(butt_l)
-        main_l.addLayout(butt_l2)
-        main_l.addStretch()
-
         # Events
-        self.connectButton.clicked.connect(self.ManageConn)
-        self.browseFileButton.clicked.connect(self.OpenFile)
-        self.sendButton.clicked.connect(self.SendFile)
+        self.ui.connButt.clicked.connect(self.ManageConn)
+        self.ui.browButt.clicked.connect(self.OpenFile)
+        self.ui.sendButt.clicked.connect(self.SendFile)
 
     def ManageConn(self):
         if self.NetMgr.is_connected:
             # is calling for connect
             self.NetMgr.Close()
-            self.connectButton.setText(" Connect ")
+            self.ui.connButt.setText(" Connect ")
         else:
             # is calling for disconnect
             self.NetMgr.Open()
             if self.NetMgr.is_connected:
-                self.connectButton.setText("Disconnect")
+                self.ui.connButt.setText("Disconnect")
 
     def OpenFile(self):
         options = QFileDialog.Options()
         # ~ if not self.native.isChecked():
             # ~ options |= QFileDialog.DontUseNativeDialog
         fileName, _ = QFileDialog.getOpenFileName(self,
-                "Open app files to send", self.fileInLine.text(),
+                "Open app files to send", self.ui.fileEdit.text(),
                 "Bin Files (*.bin)", options=options)
         if fileName:
-            self.fileInLine.setText(fileName)
+            self.ui.fileEdit.setText(fileName)
             a = open(fileName, 'rb')
             self.data = str(a.read())
 
@@ -149,8 +127,8 @@ class Uploader(QWidget):
     def SendFile(self):
         # We send the file only if there are connection to JTAG tcl server
         if not self.NetMgr.is_connected:
-            self.successLabel.setStyleSheet("QWidget { background-color: red }")
-            self.successLabel.setText("No connection found")
+            self.ui.successLabel.setStyleSheet("QWidget { background-color: red }")
+            self.ui.successLabel.setText("No connection found")
             return
 
         #print self.NetMgr.soc.recv(150)
@@ -158,20 +136,20 @@ class Uploader(QWidget):
         if len(self.data) > 0:
             for i in range(len(self.data)):
                 #send data[i] and update progress bar
-                self.NetMgr.SendData(self.data[i])
+                self.NetMgr.SendData(self.data[i].encode())
                 # ~ print self.NetMgr.soc.recv(16)
-                self.progress.setValue(((1+i)*100)/len(self.data))
+                self.ui.progress.setValue(((1+i)*100)/len(self.data))
 
             # Is done.
-            self.NetMgr.SendData('E')
-            self.NetMgr.SendData('N')
-            self.NetMgr.SendData('D')
+            self.NetMgr.SendData('E'.encode())
+            self.NetMgr.SendData('N'.encode())
+            self.NetMgr.SendData('D'.encode())
 
-            self.successLabel.setStyleSheet("QWidget { background-color: green }")
-            self.successLabel.setText(" Success ")
+            self.ui.successLabel.setStyleSheet("QWidget { background-color: green }")
+            self.ui.successLabel.setText(" Success ")
         else:
-            self.successLabel.setStyleSheet("QWidget { background-color: red }")
-            self.successLabel.setText("File no found")
+            self.ui.successLabel.setStyleSheet("QWidget { background-color: red }")
+            self.ui.successLabel.setText("File no found")
 
 
 def main():
